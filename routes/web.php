@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ManagementUserController;
 use App\Http\Controllers\DetailProfileController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\HomeButterfly;
 use App\Http\Controllers\UserController;
 
 /*
@@ -33,6 +35,14 @@ Route::get('/home', [ManagementUserController::class, 'index']);
 Route::get('/app', function(){
     return view('app');
 });
+
+Route::group(['namespace' => ''], function(){
+    Route::resource('/butterfly', HomeController::class);
+});
+
+// Route::group(['namespace' => ''], function(){
+//     Route::resource('/homes', HomeButterfly::class);
+// });
 
 // // route dasar
 // Route::get('/foo', function () {
