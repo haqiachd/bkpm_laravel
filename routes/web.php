@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ManagementUserController;
@@ -40,10 +41,9 @@ Route::group(['namespace' => ''], function(){
     Route::resource('/butterfly', HomeController::class);
 });
 
-// Route::group(['namespace' => ''], function(){
-//     Route::resource('/homes', HomeButterfly::class);
-// });
-
+Route::group(['namespace' => ''], function(){
+    Route::resource('/niceadmin', DashboardController::class);
+});
 // // route dasar
 // Route::get('/foo', function () {
 //     return 'hello_world';
